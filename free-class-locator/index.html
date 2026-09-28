@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Class Locator - Unified App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Free Class Locator</h1>
+      <p>Interactive Map • Smart Search • Live Countdown • Squad Share</p>
+    </header>
+
+    <!-- STEP 15: Smart Search -->
+    <section class="card">
+      <h2>Smart Search</h2>
+      <textarea id="smartSearchInput" rows="2" placeholder="e.g. I need an AC room on the ground floor for my team for the next 2 hours"></textarea>
+      <button id="smartSearchBtn">🔍 FIND ROOM</button>
+      <div id="smartResults" class="smart-info"></div>
+    </section>
+
+    <!-- Normal Filters -->
+    <section class="card">
+      <h2>Manual Filters</h2>
+      <div class="filters-grid">
+        <div>
+          <label for="floorSelect">Floor</label>
+          <select id="floorSelect">
+            <option value="All">All Floors</option>
+            <option value="Ground">Ground Floor</option>
+            <option value="First">First Floor</option>
+          </select>
+        </div>
+        <div>
+          <label for="acSelect">AC</label>
+          <select id="acSelect">
+            <option value="Any">Any</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+      </div>
+      <button id="filterBtn">🔍 APPLY FILTERS</button>
+    </section>
+
+    <!-- Interactive Visual Building Map -->
+    <section class="card">
+      <h2>Building Interactive Map</h2>
+      <p class="sub-text">Click any room node to view live availability and invite your squad.</p>
+      <div id="visualMapContainer" class="map-container"></div>
+    </section>
+
+    <!-- Selected Room Details Modal / Detail View -->
+    <section id="roomDetailCard" class="card hidden">
+      <h2 id="detailRoomTitle">Room Details</h2>
+      <div id="detailRoomStatus" class="status-box"></div>
+      
+      <!-- Live Countdown Timer -->
+      <div class="countdown-container">
+        <span>Time Left Free: </span>
+        <strong id="countdownDisplay">--:--:--</strong>
+      </div>
+
+      <!-- Call the Squad WhatsApp Integration -->
+      <button id="squadShareBtn" class="whatsapp-btn">
+        💬 Call the Squad (Share on WhatsApp)
+      </button>
+    </section>
+
+    <!-- Standard Grid View -->
+    <section id="gridContainer"></section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
